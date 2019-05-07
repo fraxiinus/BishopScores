@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_dilation"/>
+
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/primaryDarkColor"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:text="0 cm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="1 - 2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="3 - 4"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="> 4"
+                    style="@style/FlatRadioButton"
+                    android:layout_marginRight="0dp"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_effacement"/>
+
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/primaryDarkColor"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:text="0 - 30%"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="40 - 50"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="60 - 70"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="> 70%"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_station"/>
+
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/primaryDarkColor"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:text="-3"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="-2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="-1, 0"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="+1, +2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="60dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>
