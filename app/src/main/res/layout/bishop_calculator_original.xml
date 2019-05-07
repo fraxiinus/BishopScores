@@ -18,12 +18,14 @@
                 android:text="@string/calc_dilation"/>
 
         <RadioGroup
+                android:checkedButton="@id/first_dilation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:background="@color/primaryDarkColor"
                 android:orientation="horizontal">
             <RadioButton
+                    android:id="@+id/first_dilation"
                     android:text="0 cm"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
@@ -65,12 +67,14 @@
                 android:text="@string/calc_effacement"/>
 
         <RadioGroup
+                android:checkedButton="@id/first_effacement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:background="@color/primaryDarkColor"
                 android:orientation="horizontal">
             <RadioButton
+                    android:id="@+id/first_effacement"
                     android:text="0 - 30%"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
@@ -112,12 +116,14 @@
                 android:text="@string/calc_station"/>
 
         <RadioGroup
+                android:checkedButton="@id/first_station"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:background="@color/primaryDarkColor"
                 android:orientation="horizontal">
             <RadioButton
+                    android:id="@+id/first_station"
                     android:text="-3"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
@@ -139,6 +145,96 @@
                     android:text="+1, +2"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_consistency"/>
+
+        <RadioGroup
+                android:checkedButton="@id/first_consistency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/primaryDarkColor"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:id="@+id/first_consistency"
+                    android:text="Firm"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="Medium"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="Soft"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_position"/>
+
+        <RadioGroup
+                android:checkedButton="@id/first_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@color/primaryDarkColor"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:id="@+id/first_position"
+                    android:text="Posterior"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="Mid"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="Anterior"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="80dp"
                     android:layout_marginRight="0dp"
                     android:layout_height="wrap_content"/>
         </RadioGroup>
