@@ -1,11 +1,14 @@
 package com.zhu.bishopscores
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.bishop_calculator_original.*
 import kotlinx.android.synthetic.main.bishop_calculator_original.calculator_original
 import kotlinx.android.synthetic.main.bishop_calculator_simplified.*
 
@@ -14,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var contentView: ViewFlipper
     private lateinit var originalController: OriginalController
     private lateinit var simplifiedController: SimplifiedController
+    private lateinit var toolbar: Toolbar
 
     private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
 
@@ -23,6 +27,38 @@ class MainActivity : AppCompatActivity() {
 
         override fun onNothingSelected(parent: AdapterView<*>) {
         }
+    }
+
+    private val mAboutButtonListener = View.OnClickListener {
+        when(contentView.displayedChild) {
+            // Original
+            0 -> {
+                val ft = this.supportFragmentManager.beginTransaction()
+                ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_original_score_title), resources.getString(R.string.info_original_score_body)))
+                ft.addToBackStack(null)
+                ft.commit()
+            }
+
+            // Simplified
+            1 -> {
+                val ft = this.supportFragmentManager.beginTransaction()
+                ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_simplified_score_title), resources.getString(R.string.info_simplified_score_body)))
+                ft.addToBackStack(null)
+                ft.commit()
+            }
+
+            // Modifiers
+            2 -> {
+
+            }
+        }
+    }
+
+    private val mDisclaimerButtonListener = View.OnClickListener {
+        val ft = this.supportFragmentManager.beginTransaction()
+        ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_disclaimer_title), resources.getString(R.string.info_disclaimer_body)))
+        ft.addToBackStack(null)
+        ft.commit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +84,46 @@ class MainActivity : AppCompatActivity() {
         originalController = OriginalController(calculator_original)
         simplifiedController = SimplifiedController(calculator_simplified)
 
-        setSupportActionBar(mainToolbar)
+        toolbar = mainToolbar
+
+        disclaimer_action.setOnClickListener(mDisclaimerButtonListener)
+        info_button.setOnClickListener(mAboutButtonListener)
+
+        setSupportActionBar(toolbar)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_items, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.about_bishop_action -> {
+            val ft = this.supportFragmentManager.beginTransaction()
+            ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_about_bishop_title), resources.getString(R.string.info_about_bishop_body)))
+            ft.addToBackStack(null)
+            ft.commit()
+            true
+        }
+
+        R.id.about_app_action -> {
+            val ft = this.supportFragmentManager.beginTransaction()
+            ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_about_app_title), resources.getString(R.string.info_about_app_body)))
+            ft.addToBackStack(null)
+            ft.commit()
+            true
+        }
+
+        R.id.references_action -> {
+            val ft = this.supportFragmentManager.beginTransaction()
+            ft.replace(R.id.overlay_placeholder, InformationFragment.newInstance(resources.getString(R.string.info_references_title), resources.getString(R.string.info_references_body)))
+            ft.addToBackStack(null)
+            ft.commit()
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 }

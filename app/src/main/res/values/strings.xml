@@ -1,6 +1,128 @@
 <resources>
     <string name="app_name">Bishop Scores</string>
     <string name="info_button">More Info</string>
+    <string name="disclaimer_action">Disclaimer</string>
+    <string name="about_bishop_action">About Bishop Scores</string>
+    <string name="about_app_action">About App</string>
+    <string name="references_action">References</string>
+    <string name="back_action">Back</string>
+
+    <string name="info_disclaimer_title">Disclaimer</string>
+    <string name="info_disclaimer_body">
+Dear Colleague,\n\nIntervention in the course of pregnancy is always serious business. A Bishop Score can help you plan
+how to induce labor when you and your patient together decide induction is appropriate.\n\nCalculators and scoring
+schemes are from  published literature (see references). The author of the app has tried to faithfully present the
+findings and guidance of others with explanations and discussion while not substituting his own judgment. If you think
+I have erred in presentation or explanation, please let me know!\n\nThis app is no substitute for knowledge, training,
+and experience in labor induction. The app is merely a quick reference of material you already know.\n\nAnd like any
+other calculator scoring scheme, these calculators suggest how you might plan induction for the average patient. But,
+they cannot tell you how to manage the single unique patient at hand right now. Individualize your care and be vigilant
+for advances and changes in induction management. And most of all, do your own thinking.
+    </string>
+
+    <string name="info_about_bishop_title">About Bishop Scores</string>
+    <string name="info_about_bishop_body">
+Induction of labor is a medical intervention undertaken to bring pregnancy to its conclusion with delivery before
+nature intended. As such, some women\'s bodies are more ready for labor while others are less ready. In 1964, Edward
+Bishop published his classic paper describing pelvic exam findings which correlated with imminence of spontaneous labor
+and, by extension, readiness for induced labor. His score for pelvic exam findings soon took his name as the Bishop
+Score. Although his study was about imminence of natural labor and not about the intervention of induction, he asserted
+that the score was useful for predicting which women could be induced to achieve a successful vaginal delivery.
+Subsequent work confirmed that pelvic findings predicted likelihood of induction success.\n\nOver the ensuing years,
+other scoring systems were developed based upon pelvic exam findings and maternal characteristics such as parity,
+postdates, and more. The original Bishop Score and all the subsequent ones involved findings and point schemes and
+sometimes weighting of factors to arrive at a final score. Most if not all schemes have too many factors and point
+systems to memorize.  Paper charts and digital calculators like those in this app are indispensable. The original
+Bishop Score of the 1964 paper and the Hughey 1976 critique of the several schemes of the time with its \"modifiers\" to
+improve the accuracy are both popular currently and are presented in this app. The third is the 2011 Simplified Bishop
+Score. Using modern statistical methods and a large sample size of nulliparas who typically provide the most challenge
+to induce, the Simplified Bishop seeks to achieve predictive accuracy as good or better than the original score while
+simplifying the number of factors involved for the sake of ease of use.\n\nIn all cases, a woman with a low score is
+considered \"unfavorable\" for induction and less likely to arrive at a vaginal delivery with Oxytocin, amniotomy, and
+the like. Her chances for success are improved by measures which \"ripen\" or prepare the cervix and produce higher
+scores and better readiness for subsequent induction measures. Typical ripening agents include prostaglandins and
+mechanical dilators like Foley catheters. When ripening agents produce improved favorable Bishop scores, induction
+usually commences.\n\nBut it must be noted that although various papers and guidelines cite score thresholds, these
+thresholds are somewhat arbitrary. The success rate difference between Bishop scores of 1 versus 7 is large, while the
+difference between 6 and 7 is small, even though the threshold score for favorable induction success is >6 (ACOG, 2009).
+There is a continuum of rates of vaginal delivery success. Furthermore, different types of patients and different
+situations may warrant different thresholds for who needs ripening and who may proceed to induction. Thus one should
+not read these calculators, their scores, and the cited success levels as absolute. Because so many papers and
+calculators cite thresholds and offer interpretations, these do, too. You may (and should!) substitute your own
+interpretations and thresholds according to your knowledge of the literature and your knowledge of your patient and
+her unique clinical situation as you plan induction.\n\nSome Bishop calculators give a percent likelihood of successful
+vaginal delivery such as \"score 2 = X%, score 3 = Y%, score 8 = Z%,\" etc, all based upon the stats from the source
+paper in the literature. But that would suggest that such numbers generalize and apply to your present patient. Given
+how c-section rates were dramatically different in 1964 and 1976 from 2011, and how different papers studying different
+populations will have different vaginal delivery rates, I think it would be misleading to cite an absolute percent
+likelihood of success that one would be tempted to apply to a current patient under consideration for induction. Using
+relative terms like \"favorable\" and \"unfavorable\", even with it\'s inaccuracies, is better.\n\nFinally, do not lose
+sight of the fact that a Bishop score does NOT tell you whether to induce. You, the clinician, in concert with your
+patient\'s needs, wishes, and values, choose whether and when to bring pregnancy to an end and move a patient towards
+delivery with induction. Only when you decide to induce do you employ a Bishop score to tell you whether to ripen first.
+\n\n \n\n \n\n
+    </string>
+
+    <string name="info_about_app_title">About App</string>
+    <string name="info_about_app_body">
+Written to put Bishop score calculators in the hands of physicians, midwives, nurses, students, and residents at the
+point of care.\n\nContent + Design:\n\t\tJoshua Steinberg MD,\n\t\tUHS Wilson Family Practice Residency,\n\t\tBinghamton NY
+\n\nProgrammer:\n\t\tAnchu Lee,\n\t\tBinghamton University\n\nFeedback: jds.pocapps@gmail.com\nPlatform: Android
+Lollipop 5.0 - Android Pie 9\nVersion: 1\nLicense: GNU General Public License v3.0\nSource:
+https://github.com/leeanchu/BishopScores
+    </string>
+
+    <string name="info_references_title">References</string>
+    <string name="info_references_body">
+\"Pelvic Scoring for Elective Induction\", Edward Bishop, Obstetrics and Gynecology, vol. 24, no. 2, August 1964.\n\n\"An
+Evaluation of Preinduction Scoring Systems\", Hughey et. al., Obstetrics and Gynecology, vol. 48, no. 6, December
+1976.\n\n\"Using a Simplified Bishop Score to Predict Vaginal Delivery\", Laughon et. al., Obstetrics and Gynecology,
+vol. 117, no. 4, April 2011.\n\n\"Induction of Labor\", ACOG Practice Bulletin 107, Obstetrics and Gynecology, vol. 114,
+no. 2, part 1, August 2009.
+    </string>
+
+    <string name="info_original_score_title">About Original Bishop Scores</string>
+    <string name="info_original_score_body">
+In 1964 Edward Bishop\'s classic paper (see references) looked at the pelvic exam findings of 500 women and found
+correlation between 5 advancing criteria and imminence of spontaneous labor. Knowledge that spontaneous labor was near,
+he then asserted, also predicted which patients could successfully be induced to achieve vaginal delivery.\n\nEver since,
+the Bishop score has been used to distinguish patients who can be induced straight away from those who would need
+cervical ripening before induction measures. Typically one ripens the cervix until a satisfactory Bishop score is
+reached, and then induction commences.\n\nPopulation: Bishop does not describe the characteristics of the 500 women
+he studied. It has been asserted that he studied mostly or all multiparous women. While the paper does not say so
+explicitly, Bishop does say early in his paper that induction of nulliparas should be avoided, suggesting that he
+viewed Bishop scoring as a tool for likely use with multiparas.\n\nThresholds: Bishop\'s paper states that a score of 9
+or more portends induction success. ACOG\'s most recent Practice Bulletin on induction of labor (see references) states
+that a consensus of studies suggests that a Bishop score > 6 is favorable for success and ≥ 9 yields success rates as
+good as those of natural spontaneous labor. A look at the Laughon Simplified Bishop paper (see references) not only
+shows comparisons between the original Bishop score and the proposed new simplified score, but it also shows success
+rate curves for a large cohort of realworld patients, confirming that higher scores (in either scheme) are met with
+higher rates of success yet reminding one that thresholds are somewhat artificial as there is a continuum of rising
+success rates rather than clear thresholds.
+    </string>
+
+    <string name="info_simplified_score_title">About Simplified Bishop Scores</string>
+    <string name="info_simplified_score_body">
+In 2011, Laughon and colleagues (see references) used modern statistical methods to find which factors are associated
+with induction success with an eye towards trying to arrive at a scheme simpler than the classic Bishop score. From a
+contemporary electronic multicenter database of more than 200,000 patients they analysed the 5,600 nulliparas
+undergoing induction who had a full set of pelvic findings and outcomes recorded. They found that although all of the
+Bishop factors correlated with induction success, the factors of dilation, effacement, and station correlated the most,
+and the removal of cervical position and consistency did not weaken the predictive power of a simplified scoring scheme.
+They then validated the Simplified Bishop Score via bootstrapping (running comparative analyses of old Bishop and new
+Simplified Bishop schemes on large randomly selected cohorts of their original data set). The paper demonstrates
+statistically and then graphically that the new Simplified Bishop Score yields almost identical predictive results at
+each scoring level as the classic Bishop Score.\n\nThresholds: what score is good enough to proceed with induction with
+high likelihood of success? The authors of the Simplified Bishop Score paper used Bishop\'s own higher threshold of ≥9 to
+declare that success was likely.  An original Bishop score ≥9 correlates statistically with a Simplified Bishop score
+of >5.  However, one should note that ACOG\'s standard for a satisfactory Bishop score for favorable outcomes is >6.
+Careful review of Laughon\'s statistics and graphs shows that this lower threshold corresponds to a Simplified Bishop
+score of >4. Thus the app notes both the >5 and >4 thresholds as potentially meaningful to clinicians and cites them
+both with the score results and likelihood of success statement.\n\nPopulation: it should be noted that the Simplified
+Bishop Score was developed only on nulliparous patients.Until validated and possibly recalibrated for a parous
+population, it cannot accurately be used to guide parous inductions. Although this is somewhat limiting, it is the
+nullipara who is most difficult to induce and thus this is the population who needs guidance on induction success the most.
+    </string>
 
     <string name="calc_dilation">Dilation</string>
     <string name="calc_effacement">Effacement</string>
@@ -17,4 +139,29 @@
     <string name="success_favorable">Favorable</string>
     <string name="success_favorable_plus">Favorable*</string>
     <string name="success_favorable_plus_text">* Similar to spontaneous labor</string>
+
+    <string name="value_dilation_0">0 cm</string>
+    <string name="value_dilation_1">1 – 2</string>
+    <string name="value_dilation_2">3 – 4</string>
+    <string name="value_dilation_3">> 4</string>
+
+    <string name="value_effacement_0">0 – 30%</string>
+    <string name="value_effacement_1">40 – 50</string>
+    <string name="value_effacement_2">60 – 70</string>
+    <string name="value_effacement_3">> 70</string>
+
+    <string name="value_station_0">-3</string>
+    <string name="value_station_1">-2</string>
+    <string name="value_station_2">-1, 0</string>
+    <string name="value_station_3">+1, 2</string>
+
+    <string name="value_consistency_0">Firm</string>
+    <string name="value_consistency_1">Medium</string>
+    <string name="value_consistency_2">Soft</string>
+
+    <string name="value_position_0">Posterior</string>
+    <string name="value_position_1">Mid</string>
+    <string name="value_position_2">Anterior</string>
+
+
 </resources>

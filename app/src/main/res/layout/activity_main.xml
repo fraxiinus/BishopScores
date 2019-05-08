@@ -8,6 +8,13 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <FrameLayout
+            android:elevation="5dp"
+            android:id="@+id/overlay_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </FrameLayout>
+
     <android.support.v7.widget.Toolbar
             android:id="@+id/mainToolbar"
             android:layout_width="match_parent"
@@ -16,7 +23,22 @@
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_gravity="end"
+            android:id="@+id/disclaimer_action"
+            android:text="@string/disclaimer_action"
+            android:backgroundTint="@color/primaryColor"
+            android:drawableEnd="@drawable/ic_warning_black_24dp"
+            android:shadowRadius="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"/>
+
+
+    </android.support.v7.widget.Toolbar>
+
 
     <LinearLayout
             android:id="@+id/mainControl"
@@ -39,12 +61,13 @@
         </android.support.v7.widget.AppCompatSpinner>
 
         <Button
+                android:id="@+id/info_button"
                 android:text="@string/info_button"
                 android:layout_marginRight="10dp"
-                android:background="@color/primaryColor"
+                android:backgroundTint="@color/primaryColor"
                 android:layout_width="0dp"
                 android:layout_weight="0.3"
-                android:layout_height="30dp"/>
+                android:layout_height="40dp"/>
 
     </LinearLayout>
 

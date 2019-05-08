@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/about_bishop_action"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/about_bishop_action"
+            app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/about_app_action"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/about_app_action"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/references_action"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/references_action"
+        app:showAsAction="never"/>
+</menu>

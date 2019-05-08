@@ -30,25 +30,25 @@
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_dilation"
-                    android:text="0 cm"
+                    android:text="@string/value_dilation_0"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="1 - 2"
+                    android:text="@string/value_dilation_1"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="3 - 4"
+                    android:text="@string/value_dilation_2"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="> 4"
+                    android:text="@string/value_dilation_3"
                     style="@style/FlatRadioButton"
                     android:layout_marginRight="0dp"
                     android:layout_width="60dp"
@@ -80,25 +80,25 @@
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_effacement"
-                    android:text="0 - 30%"
+                    android:text="@string/value_effacement_0"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="40 - 50"
+                    android:text="@string/value_effacement_1"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="60 - 70"
+                    android:text="@string/value_effacement_2"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="> 70%"
+                    android:text="@string/value_effacement_3"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_marginRight="0dp"
@@ -130,25 +130,25 @@
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_station"
-                    android:text="-3"
+                    android:text="@string/value_station_0"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="-2"
+                    android:text="@string/value_station_1"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="-1, 0"
+                    android:text="@string/value_station_2"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
-                    android:text="+1, +2"
+                    android:text="@string/value_station_3"
                     style="@style/FlatRadioButton"
                     android:layout_width="60dp"
                     android:layout_marginRight="0dp"
@@ -156,6 +156,7 @@
         </RadioGroup>
 
     </LinearLayout>
+
     <LinearLayout
             android:orientation="vertical"
             android:layout_marginTop="10dp"
