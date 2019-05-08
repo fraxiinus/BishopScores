@@ -23,25 +23,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:background="@color/primaryLightColor"
             app:layout_constraintTop_toBottomOf="@id/mainToolbar">
 
         <android.support.v7.widget.AppCompatSpinner
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:id="@+id/control_spinner"
                 android:textAlignment="center"
                 style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
                 android:layout_height="wrap_content">
 
         </android.support.v7.widget.AppCompatSpinner>
 
         <Button
                 android:text="more info"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_marginRight="10dp"
+                android:background="@color/primaryColor"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="30dp"/>
 
     </LinearLayout>
 
@@ -63,24 +66,5 @@
         <include layout="@layout/bishop_calculator_modifiers"/>
 
     </ViewFlipper>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/mainContent">
-
-        <TextView
-                android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="Test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="Test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

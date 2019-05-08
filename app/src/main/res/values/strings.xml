@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">Bishop Scores</string>
-    <string name="title_home">Calculator</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="info_button">More Info</string>
 
     <string name="calc_dilation">Dilation</string>
     <string name="calc_effacement">Effacement</string>
     <string name="calc_station">Station</string>
     <string name="calc_consistency">Consistency</string>
     <string name="calc_position">Position</string>
+    <string name="calc_score">Score</string>
+    <string name="calc_success">Likelihood of induction success</string>
+
+    <string name="success_unknown">Invalid value</string>
+    <string name="success_unfavorable">Unfavorable</string>
+    <string name="success_favorable">Favorable</string>
+    <string name="success_favorable_plus">Favorable*</string>
+    <string name="success_favorable_plus_text">*Similar to spontaneous labor</string>
 </resources>

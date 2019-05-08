@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bishop_calculator_original.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var contentView: ViewFlipper
+    private lateinit var originalController: OriginalController
 
     private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
 
@@ -42,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         spinner.onItemSelectedListener = mSpinnerListener
         contentView = mainContent
+
+        originalController = OriginalController(calculator_original)
 
         setSupportActionBar(mainToolbar)
     }

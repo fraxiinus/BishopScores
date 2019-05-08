@@ -3,7 +3,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/primaryLightColor"
+        android:id="@+id/calculator_original"
+        android:padding="10dp">
 
     <LinearLayout
             android:orientation="horizontal"
@@ -11,18 +14,19 @@
             android:layout_height="wrap_content">
 
         <TextView
-                android:padding="10dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/calc_dilation"/>
 
         <RadioGroup
+                android:id="@+id/dilation_group"
                 android:checkedButton="@id/first_dilation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryDarkColor"
+                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_dilation"
@@ -60,18 +64,19 @@
             android:layout_height="wrap_content">
 
         <TextView
-                android:padding="10dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/calc_effacement"/>
 
         <RadioGroup
+                android:id="@+id/effacement_group"
                 android:checkedButton="@id/first_effacement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryDarkColor"
+                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_effacement"
@@ -109,18 +114,19 @@
             android:layout_height="wrap_content">
 
         <TextView
-                android:padding="10dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/calc_station"/>
 
         <RadioGroup
+                android:id="@+id/station_group"
                 android:checkedButton="@id/first_station"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryDarkColor"
+                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_station"
@@ -158,18 +164,19 @@
             android:layout_height="wrap_content">
 
         <TextView
-                android:padding="10dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/calc_consistency"/>
 
         <RadioGroup
+                android:id="@+id/consistency_group"
                 android:checkedButton="@id/first_consistency"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryDarkColor"
+                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_consistency"
@@ -203,18 +210,19 @@
             android:layout_height="wrap_content">
 
         <TextView
-                android:padding="10dp"
+                android:paddingTop="10dp"
                 android:textColor="@color/primaryTextColor"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="@string/calc_position"/>
 
         <RadioGroup
+                android:id="@+id/position_group"
                 android:checkedButton="@id/first_position"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryDarkColor"
+                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_position"
@@ -238,6 +246,66 @@
                     android:layout_marginRight="0dp"
                     android:layout_height="wrap_content"/>
         </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="@string/calc_score"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:background="@color/secondaryTextColor"
+                    android:textAlignment="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_width="60dp"
+                    android:id="@+id/score_tv"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:text="@string/success_unfavorable"
+                    android:background="@color/secondaryTextColor"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_width="100dp"
+                    android:id="@+id/success_tv"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:visibility="gone"
+                    android:id="@+id/calc_plus_note"
+                    android:layout_marginLeft="100dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
