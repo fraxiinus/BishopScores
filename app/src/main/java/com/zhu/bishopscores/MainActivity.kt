@@ -6,19 +6,19 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bishop_calculator_original.*
+import kotlinx.android.synthetic.main.bishop_calculator_original.calculator_original
+import kotlinx.android.synthetic.main.bishop_calculator_simplified.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var contentView: ViewFlipper
     private lateinit var originalController: OriginalController
+    private lateinit var simplifiedController: SimplifiedController
 
     private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
 
         override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-
             contentView.displayedChild = pos
-
-            Toast.makeText(parent.context, parent.getItemAtPosition(pos).toString() + " : " + pos, Toast.LENGTH_LONG).show()
         }
 
         override fun onNothingSelected(parent: AdapterView<*>) {
@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         contentView = mainContent
 
         originalController = OriginalController(calculator_original)
+        simplifiedController = SimplifiedController(calculator_simplified)
 
         setSupportActionBar(mainToolbar)
     }

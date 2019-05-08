@@ -12,7 +12,9 @@
 
     <string name="success_unknown">Invalid value</string>
     <string name="success_unfavorable">Unfavorable</string>
+    <string name="success_unfavorable_plus">Unfavorable*</string>
+    <string name="success_unfavorable_plus_text">* Similar to a 7 in Original Bishop</string>
     <string name="success_favorable">Favorable</string>
     <string name="success_favorable_plus">Favorable*</string>
-    <string name="success_favorable_plus_text">*Similar to spontaneous labor</string>
+    <string name="success_favorable_plus_text">* Similar to spontaneous labor</string>
 </resources>
