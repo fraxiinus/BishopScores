@@ -2,11 +2,12 @@ package com.zhu.bishopscores
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.TypedValue
+import android.view.*
 import android.widget.TextView
+import kotlinx.android.synthetic.main.information_fragment.*
 
 class InformationFragment: Fragment(), View.OnClickListener {
 
@@ -38,8 +39,10 @@ class InformationFragment: Fragment(), View.OnClickListener {
         val layout = inflater.inflate(R.layout.information_fragment, container, false)
 
         layout.findViewById<TextView>(R.id.title_tv).text = title
-        layout.findViewById<TextView>(R.id.info_body).text = body
         layout.findViewById<Toolbar>(R.id.infoToolbar).setNavigationOnClickListener(this)
+        val textView = layout.findViewById<TextView>(R.id.info_body)
+
+        textView.text = body
 
         return layout
     }

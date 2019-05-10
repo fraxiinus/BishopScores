@@ -39,6 +39,7 @@
         <TextView
             android:id="@+id/info_body"
             android:justificationMode="inter_word"
+            android:textSize="18sp"
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

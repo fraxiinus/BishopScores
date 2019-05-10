@@ -8,6 +8,12 @@
     <string name="references_action">References</string>
     <string name="back_action">Back</string>
 
+    <string name="font_multi_1">1.0x</string>
+    <string name="font_multi_1_25">1.25x</string>
+    <string name="font_multi_1_5">1.5x</string>
+    <string name="font_multi_1_75">1.75x</string>
+    <string name="font_multi_2">2.0x</string>
+
     <string name="info_disclaimer_title">Disclaimer</string>
     <string name="info_disclaimer_body">
 Dear Colleague,\n\nIntervention in the course of pregnancy is always serious business. A Bishop Score can help you plan
@@ -19,6 +25,7 @@ and experience in labor induction. The app is merely a quick reference of materi
 other calculator scoring scheme, these calculators suggest how you might plan induction for the average patient. But,
 they cannot tell you how to manage the single unique patient at hand right now. Individualize your care and be vigilant
 for advances and changes in induction management. And most of all, do your own thinking.
+\n\n \n\n \n\n
     </string>
 
     <string name="info_about_bishop_title">About Bishop Scores</string>
@@ -100,6 +107,7 @@ shows comparisons between the original Bishop score and the proposed new simplif
 rate curves for a large cohort of realworld patients, confirming that higher scores (in either scheme) are met with
 higher rates of success yet reminding one that thresholds are somewhat artificial as there is a continuum of rising
 success rates rather than clear thresholds.
+\n\n \n\n \n\n
     </string>
 
     <string name="info_simplified_score_title">About Simplified Bishop Scores</string>
@@ -123,6 +131,7 @@ both with the score results and likelihood of success statement.\n\nPopulation: 
 Bishop Score was developed only on nulliparous patients.Until validated and possibly recalibrated for a parous
 population, it cannot accurately be used to guide parous inductions. Although this is somewhat limiting, it is the
 nullipara who is most difficult to induce and thus this is the population who needs guidance on induction success the most.
+\n\n \n\n \n\n
     </string>
 
     <string name="info_modifiers_score_title">About Bishop With Modifiers</string>

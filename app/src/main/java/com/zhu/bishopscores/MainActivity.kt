@@ -1,5 +1,7 @@
 package com.zhu.bishopscores
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var simplifiedController: SimplifiedController
     private lateinit var modifiersController: ModifiersController
     private lateinit var toolbar: Toolbar
+    private lateinit var prefs: SharedPreferences
 
     private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
 
@@ -102,6 +105,8 @@ class MainActivity : AppCompatActivity() {
         modifiersController = ModifiersController(calculator_modifiers)
 
         info_button.setOnClickListener(mAboutButtonListener)
+
+        prefs = this.getSharedPreferences("com.zhu.bishopscores", Context.MODE_PRIVATE)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -153,6 +158,18 @@ class MainActivity : AppCompatActivity() {
         else -> {
             super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onPause() {
+        prefs.edit().putFloat("com.zhu.bishopscores.fontsizemulti", (application as ApplicationData).fontSizeMultiplier).apply()
+
+        super.onPause()
+    }
+
+    override fun onResume() {
+        (application as ApplicationData).fontSizeMultiplier = prefs.getFloat("com.zhu.bishopscores.fontsizemulti", 1f)
+
+        super.onResume()
     }
 
     private fun replaceFragment(fragment: Fragment) {
