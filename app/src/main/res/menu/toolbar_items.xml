@@ -3,10 +3,16 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-            android:id="@+id/about_bishop_action"
-            android:icon="@drawable/ic_info_black_24dp"
-            android:title="@string/about_bishop_action"
-            app:showAsAction="never"/>
+        android:id="@+id/disclaimer_action"
+        android:icon="@drawable/ic_warning_black_24dp"
+        android:title="@string/disclaimer_action"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/about_bishop_action"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/about_bishop_action"
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/about_app_action"
