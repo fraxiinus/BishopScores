@@ -124,11 +124,61 @@ population, it cannot accurately be used to guide parous inductions. Although th
 nullipara who is most difficult to induce and thus this is the population who needs guidance on induction success the most.
     </string>
 
+    <string name="info_modifiers_score_title">About Bishop With Modifiers</string>
+    <string name="info_modifiers_score_body">
+Modifiers abbreviations:\nPreecl = pre-eclampsia\nPROM = prelabor or prolonged ROM\nElective = no medical indication
+for induction\nPostdates \u0026 Prior Vaginal Deliveries self-explanatory\n\nThe Bishop Score with Modifiers is of such
+questionable validity that it should probably not guide care. I include it in this app because it is pretty popular
+among online website and handheld app calculators. Omitting it would leave it unaddressed, and including it allows for
+a discussion of the evidence. which follows.\n\nIn 1976, Hughey and colleagues (see reference) compared each of the
+five existing pelvic scoring systems of the day (Bishop, Fields, Burnett, Simple and Complete Friedman) by running 100
+patients at his hospital through all five scoring systems and comparing each scheme\'s ability to predict induction
+success. He purposely analyzed a population of mixed parity and indications. To compare across schemes, he looked at
+whether scores in the lower third of each scheme predicted lowest success rates, middle third scores predicted
+intermediate success, and highest third scores predicted highest success. Hughey found that all scoring schemes were
+similarly accurate for the lower third of scores, but not so much for middle and upper thirds.\n\nSo Hughey then looked
+at factors which could give correction points of +1, -1, etc., and see if these \"modifiers\" could lead to correct
+classification in lower, middle, and upper thirds of scores to correspond with lower, middle, and higher rates of
+success. He found it worked for the Bishop score and the other four schemes. Correction points as follows:\n-
+Nulliparous: -1\n- Parous: +1 for each prior vag delivery\n- Pre-eclamptic: +1\n-
+Prelabor/prolonged ROM: -1\n- Postdates: -1\n- Induction purely elective: +1\n\nThresholds: as
+Hughey divided up the Bishop 0-13 score into lower (0-4 pts), middle (5-9), and upper (10-13)
+thirds, it is hard to know what to make of the middle third. In the study, those with a modified score 0-4 had a
+50% induction failure rate, and it seems appropriate to call such a success rate unfavorable for induction. Those with
+a modified score 10-13 had a failure rate of 0\%, thus this group certainly seems favorable for induction. Those
+in the middle group with modified score 5-9 had a 10\% failure rate, which at first glance seems also favorable.
+But keep in mind that the overall failure rate (oddly defined as it was, see below) was 12\% and the overall c-section
+rate was 7\%, thus 10\% failure rate is neither better nor different than the average overall outcome, and thus can
+hardly be called favorable. With 40 years hindsight and a little bit of evidence based medicine statistics knowledge,
+I am not willing to call this middle score group anything more definitive than "intermediate" likelihood of success.
+If you have more insight, please let me know.\n\nPopulation and critique of results: study cohort was 100 \"unselected
+patients\" over 8 months ending in July 1975, with induction indications 54 patients elective, 19 prelabor or prolonged
+ROM, 14 postdates, 6 pre-eclampsia, 2 known fetal demise, 2 gestational diabetes, and 1 each recurring false
+labor, Rh disease, and cervical incompetence with failed MacDonald procedure. Induction failure was defined as labor
+ending in c-section or cessation of pitocin to halt the induction. There were 12 such induction failures, 6 of
+whom went to c-section on first day while the other 6 were induced again the next day with 5 vaginal deliveries
+and 1 c-section (these days the 5 two-day inductions would be called successes).  With only 12 failures as
+defined and 7 total c-sections, one must note that all numbers involved \u002d\u002d \# pts with GDM or postdates,
+\# induction failures, # c-sections \u002d\u002d all the numbers involved are SO low as to imperil the conclusions.
+For instance, change a single outcome associated with a factor like preeclampsia or parity or postdates and it would
+almost have to change the conclusions and correction point weightings given that but 12 failures (7 by today\'s standards)
+were spread among the factors analyzed. More certainty on validity or lack thereof would require raw data or statistical
+significance information which regrettably the paper did not offer.
+\n\n \n\n \n\n
+    </string>
+
     <string name="calc_dilation">Dilation (cm)</string>
     <string name="calc_effacement">Effacement (%)</string>
     <string name="calc_station">Station</string>
     <string name="calc_consistency">Consistency</string>
     <string name="calc_position">Position</string>
+    <string name="calc_modifiers">Modifiers</string>
+    <string name="calc_prior_vag">Prior Vag Deliveries</string>
+    <string name="calc_preecl">Preecl</string>
+    <string name="calc_prom">PROM</string>
+    <string name="calc_elective">Elective</string>
+    <string name="calc_postdates">Postdates</string>
+
     <string name="calc_score">Score</string>
     <string name="calc_success">Likelihood of induction success</string>
 
@@ -155,12 +205,23 @@ nullipara who is most difficult to induce and thus this is the population who ne
     <string name="value_position_1">Mid</string>
     <string name="value_position_2">Anterior</string>
 
+    <string name="value_prior_vag_0">0</string>
+    <string name="value_prior_vag_1">1</string>
+    <string name="value_prior_vag_2">2</string>
+    <string name="value_prior_vag_3">3</string>
+    <string name="value_prior_vag_4">4</string>
+
+    <string name="value_yes">Yes</string>
+    <string name="value_no">No</string>
+
     <string name="success_unknown">Invalid value</string>
     <string name="success_unfavorable">Unfavorable</string>
     <string name="success_unfavorable_plus">Unfavorable*</string>
     <string name="success_unfavorable_plus_text">Similar to a 7 in Original Bishop</string>
+    <string name="success_intermediate_plus">Intermediate*</string>
     <string name="success_favorable">Favorable</string>
     <string name="success_favorable_plus">Favorable*</string>
     <string name="success_favorable_plus_text">Similar to spontaneous labor</string>
+    <string name="success_modifiers_plus_text">Validity highly questionable, see explanations</string>
 
 </resources>

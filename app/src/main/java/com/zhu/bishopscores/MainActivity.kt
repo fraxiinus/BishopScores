@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bishop_calculator_modifiers.*
 import kotlinx.android.synthetic.main.bishop_calculator_original.calculator_original
 import kotlinx.android.synthetic.main.bishop_calculator_simplified.*
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var contentView: ViewFlipper
     private lateinit var originalController: OriginalController
     private lateinit var simplifiedController: SimplifiedController
+    private lateinit var modifiersController: ModifiersController
     private lateinit var toolbar: Toolbar
 
     private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
@@ -53,7 +55,12 @@ class MainActivity : AppCompatActivity() {
 
             // Modifiers
             2 -> {
-
+                replaceFragment(
+                    InformationFragment.newInstance(
+                        resources.getString(R.string.info_modifiers_score_title),
+                        resources.getString(R.string.info_modifiers_score_body)
+                    )
+                )
             }
         }
     }
@@ -84,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         originalController = OriginalController(calculator_original)
         simplifiedController = SimplifiedController(calculator_simplified)
+        modifiersController = ModifiersController(calculator_modifiers)
 
         info_button.setOnClickListener(mAboutButtonListener)
     }
