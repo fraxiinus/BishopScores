@@ -49,7 +49,6 @@
                 android:id="@+id/info_button"
                 android:text="@string/info_button"
                 android:textAlignment="textStart"
-                android:paddingLeft="10dp"
                 android:textAllCaps="false"
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/primaryLightColor"
