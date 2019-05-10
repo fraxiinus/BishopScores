@@ -124,28 +124,20 @@ population, it cannot accurately be used to guide parous inductions. Although th
 nullipara who is most difficult to induce and thus this is the population who needs guidance on induction success the most.
     </string>
 
-    <string name="calc_dilation">Dilation</string>
-    <string name="calc_effacement">Effacement</string>
+    <string name="calc_dilation">Dilation (cm)</string>
+    <string name="calc_effacement">Effacement (%)</string>
     <string name="calc_station">Station</string>
     <string name="calc_consistency">Consistency</string>
     <string name="calc_position">Position</string>
     <string name="calc_score">Score</string>
     <string name="calc_success">Likelihood of induction success</string>
 
-    <string name="success_unknown">Invalid value</string>
-    <string name="success_unfavorable">Unfavorable</string>
-    <string name="success_unfavorable_plus">Unfavorable*</string>
-    <string name="success_unfavorable_plus_text">* Similar to a 7 in Original Bishop</string>
-    <string name="success_favorable">Favorable</string>
-    <string name="success_favorable_plus">Favorable*</string>
-    <string name="success_favorable_plus_text">* Similar to spontaneous labor</string>
-
-    <string name="value_dilation_0">0 cm</string>
+    <string name="value_dilation_0">0</string>
     <string name="value_dilation_1">1 – 2</string>
     <string name="value_dilation_2">3 – 4</string>
     <string name="value_dilation_3">> 4</string>
 
-    <string name="value_effacement_0">0 – 30%</string>
+    <string name="value_effacement_0">0 – 30</string>
     <string name="value_effacement_1">40 – 50</string>
     <string name="value_effacement_2">60 – 70</string>
     <string name="value_effacement_3">> 70</string>
@@ -163,5 +155,12 @@ nullipara who is most difficult to induce and thus this is the population who ne
     <string name="value_position_1">Mid</string>
     <string name="value_position_2">Anterior</string>
 
+    <string name="success_unknown">Invalid value</string>
+    <string name="success_unfavorable">Unfavorable</string>
+    <string name="success_unfavorable_plus">Unfavorable*</string>
+    <string name="success_unfavorable_plus_text">Similar to a 7 in Original Bishop</string>
+    <string name="success_favorable">Favorable</string>
+    <string name="success_favorable_plus">Favorable*</string>
+    <string name="success_favorable_plus_text">Similar to spontaneous labor</string>
 
 </resources>

@@ -4,246 +4,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/primaryLightColor"
-        android:id="@+id/calculator_original"
-        android:padding="10dp">
+        android:id="@+id/calculator_original">
 
     <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         <TextView
-                android:paddingTop="10dp"
+                android:paddingBottom="2dp"
                 android:textColor="@color/primaryTextColor"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                style="@style/TextAppearance.AppCompat.Body2"
                 android:text="@string/calc_dilation"/>
 
         <RadioGroup
                 android:id="@+id/dilation_group"
                 android:checkedButton="@id/first_dilation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:background="@color/primaryColor"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/first_dilation"
                     android:text="@string/value_dilation_0"
                     style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
                     android:text="@string/value_dilation_1"
                     style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
                     android:text="@string/value_dilation_2"
                     style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
                     android:layout_height="wrap_content"/>
 
             <RadioButton
                     android:text="@string/value_dilation_3"
                     style="@style/FlatRadioButton"
-                    android:layout_marginRight="0dp"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-        </RadioGroup>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-                android:paddingTop="10dp"
-                android:textColor="@color/primaryTextColor"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/calc_effacement"/>
-
-        <RadioGroup
-                android:id="@+id/effacement_group"
-                android:checkedButton="@id/first_effacement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:background="@color/primaryColor"
-                android:orientation="horizontal">
-            <RadioButton
-                    android:id="@+id/first_effacement"
-                    android:text="@string/value_effacement_0"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_effacement_1"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_effacement_2"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_effacement_3"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_height="wrap_content"/>
-        </RadioGroup>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-                android:paddingTop="10dp"
-                android:textColor="@color/primaryTextColor"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/calc_station"/>
-
-        <RadioGroup
-                android:id="@+id/station_group"
-                android:checkedButton="@id/first_station"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:background="@color/primaryColor"
-                android:orientation="horizontal">
-            <RadioButton
-                    android:id="@+id/first_station"
-                    android:text="@string/value_station_0"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_station_1"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_station_2"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_station_3"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="60dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_height="wrap_content"/>
-        </RadioGroup>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-                android:paddingTop="10dp"
-                android:textColor="@color/primaryTextColor"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/calc_consistency"/>
-
-        <RadioGroup
-                android:id="@+id/consistency_group"
-                android:checkedButton="@id/first_consistency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:background="@color/primaryColor"
-                android:orientation="horizontal">
-            <RadioButton
-                    android:id="@+id/first_consistency"
-                    android:text="@string/value_consistency_0"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="3dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_consistency_1"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="3dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_consistency_2"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="0dp"
-                    android:layout_height="wrap_content"/>
-        </RadioGroup>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-                android:paddingTop="10dp"
-                android:textColor="@color/primaryTextColor"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/calc_position"/>
-
-        <RadioGroup
-                android:id="@+id/position_group"
-                android:checkedButton="@id/first_position"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:background="@color/primaryColor"
-                android:orientation="horizontal">
-            <RadioButton
-                    android:id="@+id/first_position"
-                    android:text="@string/value_position_0"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="3dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_position_1"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="3dp"
-                    android:layout_height="wrap_content"/>
-
-            <RadioButton
-                    android:text="@string/value_position_2"
-                    style="@style/FlatRadioButton"
-                    android:layout_width="80dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
                     android:layout_height="wrap_content"/>
         </RadioGroup>
 
@@ -251,61 +62,260 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <LinearLayout
-                android:orientation="horizontal"
+        <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <TextView
-                    android:text="@string/calc_score"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="@string/calc_effacement"/>
 
-            <TextView
-                    android:background="@color/secondaryTextColor"
-                    android:textAlignment="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_width="60dp"
-                    android:id="@+id/score_tv"
-                    android:layout_height="wrap_content"/>
-
-            <TextView
-                    android:text="@string/success_unfavorable"
-                    android:background="@color/secondaryTextColor"
-                    android:textAlignment="center"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_width="100dp"
-                    android:id="@+id/success_tv"
-                    android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-        <LinearLayout
-                android:orientation="horizontal"
+        <RadioGroup
+                android:id="@+id/effacement_group"
+                android:checkedButton="@id/first_effacement"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:visibility="gone"
-                    android:id="@+id/calc_plus_note"
-                    android:layout_marginLeft="100dp"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/primaryTextColor"
-                    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:id="@+id/first_effacement"
+                    android:text="@string/value_effacement_0"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
                     android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+            <RadioButton
+                    android:text="@string/value_effacement_1"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
 
+            <RadioButton
+                    android:text="@string/value_effacement_2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
 
+            <RadioButton
+                    android:text="@string/value_effacement_3"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_station"/>
+
+        <RadioGroup
+                android:id="@+id/station_group"
+                android:checkedButton="@id/first_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+            <RadioButton
+                    android:id="@+id/first_station"
+                    android:text="@string/value_station_0"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_station_1"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_station_2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_station_3"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_consistency"/>
+
+        <RadioGroup
+                android:id="@+id/consistency_group"
+                android:checkedButton="@id/first_consistency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:orientation="horizontal">
+            <RadioButton
+                    android:id="@+id/first_consistency"
+                    android:text="@string/value_consistency_0"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_consistency_1"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_consistency_2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calc_position"/>
+
+        <RadioGroup
+                android:id="@+id/position_group"
+                android:checkedButton="@id/first_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+            <RadioButton
+                    android:id="@+id/first_position"
+                    android:text="@string/value_position_0"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_position_1"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+
+            <RadioButton
+                    android:text="@string/value_position_2"
+                    style="@style/FlatRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.33"
+                    android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:background="@drawable/score_background"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:text="@string/calc_score"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                style="@style/TextAppearance.AppCompat.Title"
+                android:textAlignment="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="match_parent"
+                android:id="@+id/score_tv"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="@string/success_unfavorable"
+                android:textAlignment="center"
+                android:paddingBottom="2dp"
+                android:textColor="@color/primaryTextColor"
+                android:layout_width="match_parent"
+                android:id="@+id/success_tv"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:visibility="gone"
+                android:id="@+id/calc_plus_note"
+                android:textColor="@color/primaryTextColor"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
