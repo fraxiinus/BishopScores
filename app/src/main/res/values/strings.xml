@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bishop Scores</string>
-    <string name="info_button">More Info</string>
+    <string name="info_button">Learn more about this calculator</string>
+    <string name="info_button_warning">This calculator has questionable validity, learn more</string>
     <string name="disclaimer_action">Disclaimer</string>
     <string name="about_bishop_action">About Bishop Scores</string>
     <string name="about_app_action">About App</string>

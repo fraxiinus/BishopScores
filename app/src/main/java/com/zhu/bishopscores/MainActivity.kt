@@ -25,6 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
             contentView.displayedChild = pos
+
+            if(pos == 2) {
+                // Show warning sign
+                info_button.text = resources.getString(R.string.info_button_warning)
+            } else {
+                info_button.text = resources.getString(R.string.info_button)
+            }
         }
 
         override fun onNothingSelected(parent: AdapterView<*>) {
@@ -41,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                         resources.getString(R.string.info_original_score_body)
                     )
                 )
+
             }
 
             // Simplified
