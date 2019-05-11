@@ -31,21 +31,26 @@ class MainActivity : AppCompatActivity() {
     private val mNavigationViewItemClickListener = NavigationView.OnNavigationItemSelectedListener { item ->
 
         when(item.groupId) {
+            // If selected item is a calculator
             R.id.calc_nav_items -> {
+                // update content to selected calculator
                 when(item.itemId) {
                     R.id.original_calc_action -> {
                         contentView.displayedChild = 0
                         updateDefaultCalculator(0)
+                        updateCalculatorViews(0)
                     }
 
                     R.id.simplified_calc_action -> {
                         contentView.displayedChild = 1
                         updateDefaultCalculator(1)
+                        updateCalculatorViews(1)
                     }
 
                     R.id.modifiers_calc_action -> {
                         contentView.displayedChild = 2
                         updateDefaultCalculator(2)
+                        updateCalculatorViews(2)
                     }
                 }
 
@@ -53,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.popBackStack()
                 }
             }
+            // Otherwise, they selected a information fragment
             else -> {
                 when (item.itemId) {
                     R.id.disclaimer_action -> {
@@ -95,6 +101,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Close the drawer when item is selected
         if(drawer.isDrawerOpen(Gravity.START)) {
             drawer.closeDrawer(Gravity.START)
         }
@@ -103,12 +110,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val mToolbarNavigationOnClickListener = View.OnClickListener {
+        // If drawer is not open, open the drawer
         if(!drawer.isDrawerOpen(Gravity.START)) {
             drawer.openDrawer(Gravity.START)
         }
     }
 
     private val mAboutButtonListener = View.OnClickListener {
+        // Display information fragment based on selected calculator
         when(contentView.displayedChild) {
             // Original
             0 -> {
@@ -147,55 +156,97 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Setup the toolbar
         toolbar = main_toolbar
         setSupportActionBar(toolbar)
+        // Enable the navigation button (hamburger menu)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp)
         supportActionBar?.setHomeButtonEnabled(true)
-
+        // Attach the listener function to the nav button
         toolbar.setNavigationOnClickListener(mToolbarNavigationOnClickListener)
 
-        drawer = drawer_layout
-
+        // Attach the listener function to the navigation drawer items
         nav_menu.setNavigationItemSelectedListener(mNavigationViewItemClickListener)
 
-        contentView = main_content
+        // Attach the listener function for the about calculator button
+        info_button.setOnClickListener(mAboutButtonListener)
 
+        // Assign the drawer object
+        drawer = drawer_layout
+        // Assign the view spinner object
+        contentView = main_content
+        // Assign the shared preferences
+        prefs = this.getSharedPreferences("com.zhu.bishopscores", Context.MODE_PRIVATE)
+
+        // Create and assign the calculator controllers
         originalController = OriginalController(calculator_original)
         simplifiedController = SimplifiedController(calculator_simplified)
         modifiersController = ModifiersController(calculator_modifiers)
-
-        info_button.setOnClickListener(mAboutButtonListener)
-
-        prefs = this.getSharedPreferences("com.zhu.bishopscores", Context.MODE_PRIVATE)
     }
 
     override fun onPause() {
-        prefs.edit().putFloat("com.zhu.bishopscores.fontsizemulti", (application as ApplicationData).fontSizeMultiplier).apply()
+        // Put global values into shared preferences
         prefs.edit().putInt("com.zhu.bishopscores.default.calculator", (application as ApplicationData).preferredCalculator).apply()
 
         super.onPause()
     }
 
     override fun onResume() {
-        (application as ApplicationData).fontSizeMultiplier = prefs.getFloat("com.zhu.bishopscores.fontsizemulti", 1f)
+        // Take values from shared preferences and put into global values
         (application as ApplicationData).preferredCalculator = prefs.getInt("com.zhu.bishopscores.default.calculator", 0)
 
+        // set the calculator display to the saved index
         contentView.displayedChild = (application as ApplicationData).preferredCalculator
+
+        // Set the selected calculator in the side menu and update texts in the app
         when((application as ApplicationData).preferredCalculator) {
-            0 -> nav_menu.setCheckedItem(R.id.original_calc_action)
-            1 -> nav_menu.setCheckedItem(R.id.simplified_calc_action)
-            2 -> nav_menu.setCheckedItem(R.id.modifiers_calc_action)
+            0 -> {
+                nav_menu.setCheckedItem(R.id.original_calc_action)
+                updateCalculatorViews(0)
+            }
+
+            1 -> {
+                nav_menu.setCheckedItem(R.id.simplified_calc_action)
+                updateCalculatorViews(1)
+            }
+
+            2 -> {
+                nav_menu.setCheckedItem(R.id.modifiers_calc_action)
+                updateCalculatorViews(2)
+            }
         }
 
         super.onResume()
     }
 
     override fun onBackPressed() {
+        // If drawer is open, close it, otherwise do default action
         if(drawer.isDrawerOpen(Gravity.START)) {
             drawer.closeDrawer(Gravity.START)
         } else {
             super.onBackPressed()
+        }
+    }
+
+
+    private fun updateCalculatorViews(index: Int) {
+        // Update toolbar title and info button text based on current calculator
+        when (index) {
+            0 -> {
+                supportActionBar?.title = resources.getString(R.string.calc_name_original)
+                info_button.text = resources.getString(R.string.info_button)
+            }
+
+            1 -> {
+                supportActionBar?.title = resources.getString(R.string.calc_name_simplified)
+                info_button.text = resources.getString(R.string.info_button)
+            }
+
+            2 -> {
+                supportActionBar?.title = resources.getString(R.string.calc_name_modifiers)
+                info_button.text = resources.getString(R.string.info_button_warning)
+            }
         }
     }
 
@@ -204,12 +255,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
+        // If a fragment is already on screen,
         if(fragmentVisible) {
+            // remove it
             supportFragmentManager.popBackStack()
         } else {
+            // otherwise, remember we are putting a fragment on screen
             fragmentVisible = true
         }
 
+        // Create fragment
         val ft = this.supportFragmentManager.beginTransaction()
         ft.replace(R.id.overlay_placeholder, fragment)
         ft.addToBackStack(null)
