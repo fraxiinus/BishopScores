@@ -5,7 +5,7 @@
 
     <corners android:radius="5dp"/>
 
-    <solid android:color="@color/primaryLightColor"/>
+    <solid android:color="@color/primaryColorLigher"/>
 
     <stroke android:width="2dp" android:color="@color/primaryColor"/>
 
