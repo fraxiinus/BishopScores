@@ -35,15 +35,22 @@ class MainActivity : AppCompatActivity() {
                 when(item.itemId) {
                     R.id.original_calc_action -> {
                         contentView.displayedChild = 0
+                        updateDefaultCalculator(0)
                     }
 
                     R.id.simplified_calc_action -> {
                         contentView.displayedChild = 1
+                        updateDefaultCalculator(1)
                     }
 
                     R.id.modifiers_calc_action -> {
                         contentView.displayedChild = 2
+                        updateDefaultCalculator(2)
                     }
+                }
+
+                if(fragmentVisible) {
+                    supportFragmentManager.popBackStack()
                 }
             }
             else -> {
@@ -150,7 +157,6 @@ class MainActivity : AppCompatActivity() {
 
         drawer = drawer_layout
 
-        nav_menu.setCheckedItem(R.id.original_calc_action)
         nav_menu.setNavigationItemSelectedListener(mNavigationViewItemClickListener)
 
         contentView = main_content
@@ -166,12 +172,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         prefs.edit().putFloat("com.zhu.bishopscores.fontsizemulti", (application as ApplicationData).fontSizeMultiplier).apply()
+        prefs.edit().putInt("com.zhu.bishopscores.default.calculator", (application as ApplicationData).preferredCalculator).apply()
 
         super.onPause()
     }
 
     override fun onResume() {
         (application as ApplicationData).fontSizeMultiplier = prefs.getFloat("com.zhu.bishopscores.fontsizemulti", 1f)
+        (application as ApplicationData).preferredCalculator = prefs.getInt("com.zhu.bishopscores.default.calculator", 0)
+
+        contentView.displayedChild = (application as ApplicationData).preferredCalculator
+        when((application as ApplicationData).preferredCalculator) {
+            0 -> nav_menu.setCheckedItem(R.id.original_calc_action)
+            1 -> nav_menu.setCheckedItem(R.id.simplified_calc_action)
+            2 -> nav_menu.setCheckedItem(R.id.modifiers_calc_action)
+        }
 
         super.onResume()
     }
@@ -182,6 +197,10 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
+    }
+
+    private fun updateDefaultCalculator(index: Int) {
+        (application as ApplicationData).preferredCalculator = index
     }
 
     private fun replaceFragment(fragment: Fragment) {
