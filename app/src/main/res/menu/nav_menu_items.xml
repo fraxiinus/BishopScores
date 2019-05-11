@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/calc_nav_items"
+        android:checkableBehavior="single">
+        <item
+                android:id="@+id/original_calc_action"
+                android:title="@string/calc_name_original"/>
+
+        <item
+                android:id="@+id/simplified_calc_action"
+                android:title="@string/calc_name_simplified"/>
+
+        <item
+                android:id="@+id/modifiers_calc_action"
+                android:title="@string/calc_name_modifiers"/>
+    </group>
+
+    <item
+            android:id="@+id/disclaimer_action"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="@string/disclaimer_action"/>
+
+    <item
+            android:id="@+id/about_bishop_action"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/about_bishop_action"/>
+
+    <item
+            android:id="@+id/references_action"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/references_action"/>
+
+    <item
+            android:id="@+id/about_app_action"
+            android:icon="@drawable/ic_thumb_up_alt_black_24dp"
+            android:title="@string/about_app_action"/>
+
+</menu>

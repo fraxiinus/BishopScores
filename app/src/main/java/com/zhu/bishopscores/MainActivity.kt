@@ -3,11 +3,12 @@ package com.zhu.bishopscores
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
+import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.Menu
-import android.view.MenuItem
+import android.view.Gravity
 import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,22 +23,81 @@ class MainActivity : AppCompatActivity() {
     private lateinit var simplifiedController: SimplifiedController
     private lateinit var modifiersController: ModifiersController
     private lateinit var toolbar: Toolbar
+    private lateinit var drawer: DrawerLayout
     private lateinit var prefs: SharedPreferences
 
-    private val mSpinnerListener = object: AdapterView.OnItemSelectedListener  {
+    private var fragmentVisible = false
 
-        override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-            contentView.displayedChild = pos
+    private val mNavigationViewItemClickListener = NavigationView.OnNavigationItemSelectedListener { item ->
 
-            if(pos == 2) {
-                // Show warning sign
-                info_button.text = resources.getString(R.string.info_button_warning)
-            } else {
-                info_button.text = resources.getString(R.string.info_button)
+        when(item.groupId) {
+            R.id.calc_nav_items -> {
+                when(item.itemId) {
+                    R.id.original_calc_action -> {
+                        contentView.displayedChild = 0
+                    }
+
+                    R.id.simplified_calc_action -> {
+                        contentView.displayedChild = 1
+                    }
+
+                    R.id.modifiers_calc_action -> {
+                        contentView.displayedChild = 2
+                    }
+                }
+            }
+            else -> {
+                when (item.itemId) {
+                    R.id.disclaimer_action -> {
+                        replaceFragment(
+                            InformationFragment.newInstance(
+                                resources.getString(R.string.info_disclaimer_title),
+                                resources.getString(R.string.info_disclaimer_body)
+                            )
+                        )
+                    }
+
+                    R.id.about_bishop_action -> {
+                        replaceFragment(
+                            InformationFragment.newInstance(
+                                resources.getString(R.string.info_about_bishop_title),
+                                resources.getString(R.string.info_about_bishop_body)
+                            )
+                        )
+                    }
+
+                    R.id.references_action -> {
+                        replaceFragment(
+                            InformationFragment.newInstance(
+                                resources.getString(R.string.info_references_title),
+                                resources.getString(R.string.info_references_body)
+                            )
+                        )
+
+                    }
+
+                    R.id.about_app_action -> {
+                        replaceFragment(
+                            InformationFragment.newInstance(
+                                resources.getString(R.string.info_about_app_title),
+                                resources.getString(R.string.info_about_app_body)
+                            )
+                        )
+                    }
+                }
             }
         }
 
-        override fun onNothingSelected(parent: AdapterView<*>) {
+        if(drawer.isDrawerOpen(Gravity.START)) {
+            drawer.closeDrawer(Gravity.START)
+        }
+
+        true
+    }
+
+    private val mToolbarNavigationOnClickListener = View.OnClickListener {
+        if(!drawer.isDrawerOpen(Gravity.START)) {
+            drawer.openDrawer(Gravity.START)
         }
     }
 
@@ -82,22 +142,17 @@ class MainActivity : AppCompatActivity() {
 
         toolbar = main_toolbar
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp)
+        supportActionBar?.setHomeButtonEnabled(true)
 
-        val spinner: Spinner = findViewById(R.id.control_spinner)
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.spinner_array,
-            R.layout.spinner_main_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
-        }
+        toolbar.setNavigationOnClickListener(mToolbarNavigationOnClickListener)
 
-        spinner.onItemSelectedListener = mSpinnerListener
+        drawer = drawer_layout
+
+        nav_menu.setCheckedItem(R.id.original_calc_action)
+        nav_menu.setNavigationItemSelectedListener(mNavigationViewItemClickListener)
+
         contentView = main_content
 
         originalController = OriginalController(calculator_original)
@@ -107,57 +162,6 @@ class MainActivity : AppCompatActivity() {
         info_button.setOnClickListener(mAboutButtonListener)
 
         prefs = this.getSharedPreferences("com.zhu.bishopscores", Context.MODE_PRIVATE)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_items, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.disclaimer_action -> {
-            replaceFragment(
-                InformationFragment.newInstance(
-                    resources.getString(R.string.info_disclaimer_title),
-                    resources.getString(R.string.info_disclaimer_body)
-                )
-            )
-            true
-        }
-
-        R.id.about_bishop_action -> {
-            replaceFragment(
-                InformationFragment.newInstance(
-                    resources.getString(R.string.info_about_bishop_title),
-                    resources.getString(R.string.info_about_bishop_body)
-                )
-            )
-            true
-        }
-
-        R.id.about_app_action -> {
-            replaceFragment(
-                InformationFragment.newInstance(
-                    resources.getString(R.string.info_about_app_title),
-                    resources.getString(R.string.info_about_app_body)
-                )
-            )
-            true
-        }
-
-        R.id.references_action -> {
-            replaceFragment(
-                InformationFragment.newInstance(
-                    resources.getString(R.string.info_references_title),
-                    resources.getString(R.string.info_references_body)
-                )
-            )
-            true
-        }
-
-        else -> {
-            super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onPause() {
@@ -172,7 +176,21 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
     }
 
+    override fun onBackPressed() {
+        if(drawer.isDrawerOpen(Gravity.START)) {
+            drawer.closeDrawer(Gravity.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     private fun replaceFragment(fragment: Fragment) {
+        if(fragmentVisible) {
+            supportFragmentManager.popBackStack()
+        } else {
+            fragmentVisible = true
+        }
+
         val ft = this.supportFragmentManager.beginTransaction()
         ft.replace(R.id.overlay_placeholder, fragment)
         ft.addToBackStack(null)

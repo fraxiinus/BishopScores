@@ -1,77 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <FrameLayout
-        android:elevation="5dp"
-        android:id="@+id/overlay_placeholder"
+<android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/main_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/primaryColor"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/control_spinner"
-                android:background="@null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
-            android:id="@+id/bottom_controls"
+    <android.support.constraint.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            app:layout_constraintTop_toBottomOf="@id/main_toolbar"
-            app:layout_constraintRight_toRightOf="parent">
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
 
-        <Button
-                android:drawableStart="@drawable/ic_info_black_24dp"
-                android:drawablePadding="10dp"
-                android:id="@+id/info_button"
-                android:text="@string/info_button"
-                android:textAlignment="textStart"
-                android:textAllCaps="false"
+        <FrameLayout
+                android:elevation="5dp"
+                android:id="@+id/overlay_placeholder"
                 android:layout_width="match_parent"
-                android:backgroundTint="@color/primaryLightColor"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent">
+        </FrameLayout>
 
-    </LinearLayout>
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/primaryColor"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_constraintTop_toTopOf="parent">
+        </android.support.v7.widget.Toolbar>
 
-    <ViewFlipper
-        android:id="@+id/main_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bottom_controls">
+        <LinearLayout
+                android:id="@+id/bottom_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+                app:layout_constraintRight_toRightOf="parent">
+
+            <Button
+                    android:drawableStart="@drawable/ic_info_black_24dp"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/info_button"
+                    android:text="@string/info_button"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:layout_width="match_parent"
+                    android:backgroundTint="@color/primaryLightColor"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <ViewFlipper
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_controls">
 
             <include layout="@layout/bishop_calculator_original"/>
             <include layout="@layout/bishop_calculator_simplified"/>
             <include layout="@layout/bishop_calculator_modifiers"/>
 
-    </ViewFlipper>
+        </ViewFlipper>
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.NavigationView
+            app:itemIconPadding="@dimen/activity_horizontal_margin"
+            app:itemTextColor="@color/nav_drawer_text_selector"
+            app:itemBackground="@drawable/nav_drawer_background_selector"
+            android:id="@+id/nav_menu"
+            android:layout_gravity="start|left"
+            android:layout_width="wrap_content"
+            app:menu="@menu/nav_menu_items"
+            android:layout_height="match_parent">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

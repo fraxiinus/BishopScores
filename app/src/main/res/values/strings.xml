@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">Bishop Scores</string>
+
+    <string name="calc_name_original">Original Bishop</string>
+    <string name="calc_name_simplified">Simplified Bishop</string>
+    <string name="calc_name_modifiers">Bishop with Modifiers</string>
+
     <string name="info_button">Learn more about this calculator</string>
     <string name="info_button_warning">This calculator has questionable validity, learn more</string>
     <string name="disclaimer_action">Disclaimer</string>
-    <string name="about_bishop_action">About Bishop Scores</string>
-    <string name="about_app_action">About App</string>
+    <string name="about_bishop_action">About Bishop scores</string>
+    <string name="about_app_action">About app</string>
     <string name="references_action">References</string>
     <string name="back_action">Back</string>
 
