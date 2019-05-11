@@ -2,6 +2,7 @@ package com.zhu.bishopscores
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Gravity
 import android.view.View
+import android.view.WindowManager
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bishop_calculator_modifiers.*
@@ -165,6 +167,11 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         // Attach the listener function to the nav button
         toolbar.setNavigationOnClickListener(mToolbarNavigationOnClickListener)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = resources.getColor(R.color.primaryDarkColor)
+        }
 
         // Attach the listener function to the navigation drawer items
         nav_menu.setNavigationItemSelectedListener(mNavigationViewItemClickListener)
