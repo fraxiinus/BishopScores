@@ -15,12 +15,6 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity">
 
-        <FrameLayout
-                android:elevation="5dp"
-                android:id="@+id/overlay_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-        </FrameLayout>
 
         <android.support.v7.widget.Toolbar
                 android:id="@+id/main_toolbar"
@@ -72,6 +66,13 @@
             <include layout="@layout/bishop_calculator_modifiers"/>
 
         </ViewFlipper>
+
+        <FrameLayout
+                android:elevation="5dp"
+                android:id="@+id/overlay_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        </FrameLayout>
 
     </android.support.constraint.ConstraintLayout>
 

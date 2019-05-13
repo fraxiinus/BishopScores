@@ -81,7 +81,7 @@ delivery with induction. Only when you decide to induce do you employ a Bishop s
 Written to put Bishop score calculators in the hands of physicians, midwives, nurses, students, and residents at the
 point of care.\n\nContent + Design:\n\t\tJoshua Steinberg MD,\n\t\tUHS Wilson Family Practice Residency,\n\t\tBinghamton NY
 \n\nProgrammer:\n\t\tAnchu Lee,\n\t\tBinghamton University\n\nFeedback: jds.pocapps@gmail.com\nPlatform: Android
-Lollipop 5.0 - Android Pie 9\nVersion: 1\nLicense: GNU General Public License v3.0\nSource:
+KitKat 4.4 - Android Pie 9\nVersion: 1\nLicense: GNU General Public License v3.0\nSource:
 https://github.com/leeanchu/BishopScores
     </string>
 
